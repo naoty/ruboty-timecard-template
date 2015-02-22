@@ -1,9 +1,12 @@
 {
-  "addons": [
-    "redistogo"
-  ],
   "description": "A template to create and deploy your ruboty on slack.",
   "env": {
+    "GOOGLE_API_ACCESS_TOKEN": {
+      "description": "An access token for Google API"
+    },
+    "GOOGLE_SPREADSHEET_KEY": {
+      "description": "A spreadsheet key (e.g. https://docs.google.com/spreadsheets/d/<key>/edit#gid=0)"
+    },
     "SLACK_PASSWORD": {
       "description": "The password of your ruboty's slack account."
     },

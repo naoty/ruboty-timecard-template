@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require "google/api_client"
+
+class GoogleAccessTokenFetcher
+  AUTH_SCOPE = "https://www.googleapis.com/auth/drive"
+  AUTH_REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
+
+  def initialize
+    @auth = Google::APIClient.new.authorization
+  end
+
+  def run
+    @auth.client_id = fetch_client_id
+    @auth.client_secret = fetch_client_secret
+    @auth.scope = AUTH_SCOPE
+    @auth.redirect_uri = AUTH_REDIRECT_URI
+    @auth.code = fetch_authorization_code
+    @auth.fetch_access_token!
+    puts "Your access token: %s" % @auth.access_token
+  end
+
+  private
+
+  def fetch_client_id
+    print "Client ID: "
+    $stdin.gets.chomp
+  end
+
+  def fetch_client_secret
+    print "Client Secret: "
+    $stdin.gets.chomp
+  end
+
+  def fetch_authorization_code
+    puts "Open this page: %s" % @auth.authorization_uri
+    print "Enter the authorization code shown in the page: "
+    $stdin.gets.chomp
+  end
+end
+
+GoogleAccessTokenFetcher.new.run

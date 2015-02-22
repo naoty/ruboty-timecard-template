@@ -1,8 +1,9 @@
-# ruboty-template
-A template to create and deploy your [ruboty](https://github.com/r7kamura/ruboty) on slack.
+# ruboty-timecard-template
+A template to create and deploy your [ruboty](https://github.com/r7kamura/ruboty) to punch a timecard on slack.
 
 * Your team owner need to enable [XMPP Gateway](https://my.slack.com/admin/settings).
 * It's recommended to create a new slack account for your ruboty.
+* You need to get an access token for Google Drive API and the key of a spreadsheet for the timecard.
 
 ## 1. Deploy
 Press "Deploy to Heroku" button and fill in a form to deploy Ruboty to heroku.
