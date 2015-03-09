@@ -1,8 +1,17 @@
 {
   "description": "A template to create and deploy your ruboty on slack.",
   "env": {
-    "GOOGLE_API_ACCESS_TOKEN": {
-      "description": "An access token for Google API"
+    "GOOGLE_CLIENT_ID": {
+      "description": "Client ID"
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "description": "Client secret"
+    },
+    "GOOGLE_REDIRECT_URI": {
+      "description": "Redirect URI"
+    },
+    "GOOGLE_REFRESH_TOKEN": {
+      "description": "Refresh token issued with access token"
     },
     "GOOGLE_SPREADSHEET_KEY": {
       "description": "A spreadsheet key (e.g. https://docs.google.com/spreadsheets/d/<key>/edit#gid=0)"
@@ -27,5 +36,5 @@
     }
   },
   "keywords": ["chatops"],
-  "name": "Ruboty"
+  "name": "Ruboty Timecard"
 }
